@@ -1,147 +1,147 @@
 @import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .logoimg {
-        display: none;
-    }
-
-    .logoimgsm {
-        position: absolute;
-        left: -140px;
-        bottom: -37px;
-    }
-
-    .nav-item {
-        padding-top: 2em;
-    }
-
-    .navbar-toggler {
-        float: right;
-    }
-
-    .navbar-brand-two {
-        display: none;
-    }
-}
-
-/* Small devices (landscape phones, entre 576px y 767.98px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .logoimg {
-        display: none;
-    }
-
-    .logoimgsm {
-        position: absolute;
-        left: -240px;
-        bottom: -37px;
-    }
-
-    .nav-item {
-        padding-top: 2em;
-    }
-
-    .navbar-toggler {
-        float: right;
-    }
-
-    .navbar-brand-two {
-        display: none;
-    }
-}
-
-/* Medium devices (tablets, entre 768px y 991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .logoimg {
-        display: none;
-    }
-
-    .logoimgsm {
-        position: absolute;
-        left: -340px;
-        bottom: -37px;
-    }
-
-    .nav-item {
-        padding-top: 2em;
-    }
-
-    .navbar-toggler {
-        float: right;
-    }
-
-    .navbar-brand-two {
-        display: none;
-    }
-}
-
-/*----CSS del NavBar------------------------------------------------------------------------------------------------------*/
-
-ul {
-    list-style-type: none;
-    display: flex;
-    gap: 1em;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.nav-link {
-    color: white !important;
-}
-
-.logoimg,
-.logoimgsm {
-    width: 5em !important;
-}
-
-.container-fluid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3em !important;
-    background-color: rgb(49, 52, 66);
-    margin: 0 !important;
-}
-
-.navbar {
-    padding: 0 !important;
-}
-
-.nav-link {
-    cursor: pointer;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 0.15em;
-    display: inline-block;
-    padding: 15px 20px;
-    position: relative;
-}
-
-.nav-link:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: -2px;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #fff;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-}
-
-.nav-link:hover:after {
-    width: 100%;
-    left: 0;
-}
-
-.nav-link.nav-active:after {
-    width: 100%;
-    left: 0;
-}
-
-body {
-    background-color: rgb(49, 52, 66) !important;
-}
+	.logoimg {
+	  display: none;
+	}
+  
+	.logoimgsm {
+	  position: absolute;
+	  left: -140px;
+	  bottom: -37px;
+	}
+  
+	.nav-item {
+	  padding-top: 2em;
+	}
+  
+	.navbar-toggler {
+	  float: right;
+	}
+  
+	.navbar-brand-two {
+	  display: none;
+	}
+  }
+  
+  /* Small devices (landscape phones, entre 576px y 767.98px) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+	.logoimg {
+	  display: none;
+	}
+  
+	.logoimgsm {
+	  position: absolute;
+	  left: -240px;
+	  bottom: -37px;
+	}
+  
+	.nav-item {
+	  padding-top: 2em;
+	}
+  
+	.navbar-toggler {
+	  float: right;
+	}
+  
+	.navbar-brand-two {
+	  display: none;
+	}
+  }
+  
+  /* Medium devices (tablets, entre 768px y 991.98px) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+	.logoimg {
+	  display: none;
+	}
+  
+	.logoimgsm {
+	  position: absolute;
+	  left: -340px;
+	  bottom: -37px;
+	}
+  
+	.nav-item {
+	  padding-top: 2em;
+	}
+  
+	.navbar-toggler {
+	  float: right;
+	}
+  
+	.navbar-brand-two {
+	  display: none;
+	}
+  }
+  
+  /*----CSS del NavBar------------------------------------------------------------------------------------------------------*/
+  
+  ul {
+	list-style-type: none;
+	display: flex;
+	gap: 1em;
+	margin: 0 !important;
+	padding: 0 !important;
+  }
+  
+  .nav-link {
+	color: white !important;
+  }
+  
+  .logoimg,
+  .logoimgsm {
+	width: 5em !important;
+  }
+  
+  .container-fluid {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 3em !important;
+	background-color: rgb(49, 52, 66);
+	margin: 0 !important;
+  }
+  
+  .navbar {
+	padding: 0 !important;
+  }
+  
+  .nav-link {
+	cursor: pointer;
+	color: #fff;
+	text-decoration: none;
+	letter-spacing: 0.15em;
+	display: inline-block;
+	padding: 15px 20px;
+	position: relative;
+  }
+  
+  .nav-link:after {
+	background: none repeat scroll 0 0 transparent;
+	bottom: -2px;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	background: #fff;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+  }
+  
+  .nav-link:hover:after {
+	width: 100%;
+	left: 0;
+  }
+  
+  .nav-link.nav-active:after {
+	width: 100%;
+	left: 0;
+  }
+  
+  body {
+	background-color: rgb(49, 52, 66) !important;
+  }
 
 /*----CSS de la galería------------------------------------------------------------------------------------------------------*/
 * {
