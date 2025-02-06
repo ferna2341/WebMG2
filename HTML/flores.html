@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores</title>
+</head>
+
+<body>
+    <script>
+        // Lista de archivos HTML para las animaciones
+        const animationPages = [
+            './flores/flor1.html',
+            './flores/flor2.html',
+            './flores/flor3.html',
+            // Agrega más archivos según tus animaciones
+        ];
+        const randomIndex = Math.floor(Math.random() * animationPages.length);
+        const selectedPage = animationPages[randomIndex];
+
+        // Redirigir al archivo seleccionado
+        window.location.href = selectedPage;
+    </script>
+</body>
+
+</html>

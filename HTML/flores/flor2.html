@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor Naranja</title>
+    <script>
+        // Lista de archivos HTML para las animaciones
+        const animationPages = [
+            './flor1.html',
+            './flor3.html',
+            './flor4.html',
+            './flor5.html',
+            './flor6.html',
+            './flor7.html',
+            // Agrega más archivos según tus animaciones
+        ];
+        if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+            const randomIndex = Math.floor(Math.random() * animationPages.length);
+            const selectedPage = animationPages[randomIndex];
+
+            // Redirigir al archivo seleccionado
+            window.location.href = selectedPage;
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container::before {
+            content: '';
+            width: 70px;
+            height: 200px;
+            border-radius: 50%;
+            border-left: 10px solid green;
+            border-bottom: 10px solid transparent;
+            position: absolute;
+            top: 60%;
+            left: 49%;
+        }
+
+        .container::after {
+            content: '';
+            width: 90px;
+            height: 60px;
+            border-radius: 50%;
+            border-bottom: 20px solid transparent;
+            border-top: 20px solid green;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+        }
+
+        .point {
+            width: 100px;
+            height: 100px;
+            background: rgb(244, 226, 54);
+            background: linear-gradient(180deg, rgba(244, 226, 54, 1) 0%, rgba(253, 29, 29, 1) 100%);
+            position: absolute;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 200px;
+            border-top-left-radius: 200px;
+        }
+        button {
+      padding: 15px 25px;
+      border: unset;
+      border-radius: 15px;
+      color: white;
+      /* Texto siempre blanco */
+      background: rgb(42, 44, 46);
+      font-weight: 1000;
+      font-size: 17px;
+      position: fixed;
+      /* Fija el botón en pantalla */
+      top: 10px;
+      /* Espaciado desde la parte superior */
+      right: 10px;
+      /* Espaciado desde la derecha */
+      z-index: 1000;
+      /* Asegura que esté sobre otros elementos */
+      -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+      box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+      transition: all 250ms;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border-radius: 15px;
+      background-color: #212121;
+      z-index: -1;
+      -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+      box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+      transition: all 250ms;
+    }
+
+    button:hover {
+      color: white;
+      /* Mantiene el color blanco al hacer hover */
+    }
+
+    button:hover::before {
+      width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <a href="/HTML/main.html">
+        <button>Home</button>
+      </a>
+    <div class="container" id="points-container">
+    </div>
+    <script>
+        const container = document.getElementById("points-container");
+        const numPoints = 10;
+
+
+        function createPoint() {
+            const point = document.createElement("div");
+            point.classList.add("point");
+            container.appendChild(point);
+
+            // Set initial position at the center
+            point.style.left = "50%";
+            point.style.top = "50%";
+
+
+            // Set animation properties
+            const animation = point.animate(
+                [
+                    { transform: "translate(-50%, -50%) rotate(-50deg)" },
+                    { transform: "translate(20%, -40%)" }
+                ],
+                {
+                    duration: 2000 + Math.random() * 2000,
+                    easing: "linear",
+                    iterations: Infinity,
+                    direction: "alternate",
+                }
+            );
+
+            return { point, animation };
+        }
+
+        function startAnimation() {
+            for (let i = 0; i < numPoints; i++) {
+
+                createPoint();
+            }
+        }
+
+        startAnimation();
+
+
+    </script>
+</body>
+
+</html>
