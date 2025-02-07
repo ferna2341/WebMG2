@@ -44,12 +44,19 @@
                 const inputValue = inputField.value.trim().toLowerCase();
                 const errorMessage = document.getElementById("error-message");
 
-                if (inputValue === "torrija") {
+                if (inputValue === "no mires el codigo") {
                     document.body.classList.add("zoom-out");
                     setTimeout(() => {
                         window.location.href = "./HTML/main.html";
                     }, 500);
-                } else {
+                } 
+                else if(inputValue === "fofa") {
+                    document.body.classList.add("zoom-out");
+                    setTimeout(() => {
+                        window.location.href = "./HTML/valentin.html";
+                    }, 500);
+                }
+                else {
                     errorMessage.textContent = "Nombre incorrecto.";
                     errorMessage.classList.add("active");
                 }
