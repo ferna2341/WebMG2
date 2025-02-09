@@ -1,153 +1,153 @@
 @import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-	.logoimg {
-	  display: none;
-	}
-  
-	.logoimgsm {
-	  position: absolute;
-	  left: -140px;
-	  bottom: -37px;
-	}
-  
-	.nav-item {
-	  padding-top: 2em;
-	}
-  
-	.navbar-toggler {
-	  float: right;
-	}
-  
-	.navbar-brand-two {
-	  display: none;
-	}
-  }
-  
-  /* Small devices (landscape phones, entre 576px y 767.98px) */
-  @media (min-width: 576px) and (max-width: 767.98px) {
-	.logoimg {
-	  display: none;
-	}
-  
-	.logoimgsm {
-	  position: absolute;
-	  left: -240px;
-	  bottom: -37px;
-	}
-  
-	.nav-item {
-	  padding-top: 2em;
-	}
-  
-	.navbar-toggler {
-	  float: right;
-	}
-  
-	.navbar-brand-two {
-	  display: none;
-	}
-  }
-  
-  /* Medium devices (tablets, entre 768px y 991.98px) */
-  @media (min-width: 768px) and (max-width: 991.98px) {
-	.logoimg {
-	  display: none;
-	}
-  
-	.logoimgsm {
-	  position: absolute;
-	  left: -340px;
-	  bottom: -37px;
-	}
-  
-	.nav-item {
-	  padding-top: 2em;
-	}
-  
-	.navbar-toggler {
-	  float: right;
-	}
-  
-	.navbar-brand-two {
-	  display: none;
-	}
-  }
-  
-  /*----CSS del NavBar------------------------------------------------------------------------------------------------------*/
-  
-  ul {
-	list-style-type: none;
-	display: flex;
-	gap: 1em;
-	margin: 0 !important;
-	padding: 0 !important;
-  }
-  
-  .nav-link {
-	color: white !important;
-  }
-  
-  .logoimg,
-  .logoimgsm {
-	width: 5em !important;
-  }
-  
-  .container-fluid {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 3em !important;
-	background-color: rgb(49, 52, 66);
-	margin: 0 !important;
-  }
-  
-  .navbar {
-	padding: 0 !important;
-  }
-  
-  .nav-link {
-	cursor: pointer;
-	color: #fff;
-	text-decoration: none;
-	letter-spacing: 0.15em;
-	display: inline-block;
-	padding: 15px 20px;
-	position: relative;
-  }
-  
-  .nav-link:after {
-	background: none repeat scroll 0 0 transparent;
-	bottom: -2px;
-	content: "";
-	display: block;
-	height: 2px;
-	left: 50%;
+
+/* NAVBAR TRANSPARENTE */
+.navbar {
+	position: fixed !important;
+	width: 100%;
+	background: transparent !important;
+	border-bottom: none !important;
+	box-shadow: none !important;
+	z-index: 1000;
+	transition: background 0.3s ease-in-out;
+}
+
+/* LOGO DEL NAVBAR */
+.navbar-brand img {
+	width: 120px;
+	height: auto;
+}
+
+/* MENÚ HAMBURGUESA */
+.navbar-toggler {
+	border: none;
 	position: absolute;
-	background: #fff;
-	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	right: 10px;
+	/* Asegura que se mantenga alineado a la derecha */
+	top: 10px;
+	/* Ajusta la altura del toggler */
+	transform: translateY(-5px);
+	/* Lo sube un poco */
+}
+
+.navbar-toggler-icon {
+	background-color: white;
+}
+
+/* ESTILO DE LOS ENLACES */
+.nav-link {
+	color: white !important;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+	position: relative;
+	transition: color 0.3s ease-in-out;
+}
+
+/* ANIMACIÓN DE SUBRAYADO */
+.nav-link:after {
+	content: "";
+	position: absolute;
 	width: 0;
-  }
-  
-  .nav-link:hover:after {
+	height: 2px;
+	bottom: -2px;
+	left: 50%;
+	background: white;
+	transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover:after {
 	width: 100%;
 	left: 0;
-  }
-  
-  .nav-link.nav-active:after {
+}
+
+/* EFECTO PARA EL LINK ACTIVO */
+.nav-link.nav-active:after {
 	width: 100%;
 	left: 0;
-  }
-  
-  body {
-	background-color: rgb(49, 52, 66) !important;
-  }
-.calendar-container {
-    display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    height: 90vh; /* Reduce la altura para que suba un poco */
-    margin-top: -5vh; /* Ajusta el valor para subirlo más o menos */
+}
+
+/* Asegurar que el logo esté más a la derecha */
+.navbar-brand {
+	margin: 40px;
+	/* Ajusta según necesites */
+}
+
+.navbar-brand img {
+	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Cuando se haga scroll, el logo se ocultará */
+.navbar.scrolled .navbar-brand img {
+	opacity: 0;
+	transform: translateY(-10px);
+	pointer-events: none;
+	/* Evita que el logo ocupe espacio invisible */
+}
+
+/* Transición suave en los enlaces */
+.navbar-nav .nav-link {
+	transition: transform 0.3s ease-in-out;
+}
+
+/* Cuando el usuario hace scroll, los enlaces suben un poco */
+.navbar.scrolled .navbar-nav .nav-link {
+	transform: translateY(-63px);
+	/* Mueve los enlaces hacia arriba */
+}
+
+/* Separar más los enlaces entre sí */
+.navbar-nav {
+	gap: 2rem;
+	/* Aumenta el espacio entre enlaces */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 992px) {
+	.navbar-nav {
+		gap: 1rem;
+		/* Un poco menos de separación en móviles */
+		text-align: center;
+	}
+
+	.navbar-brand {
+		display: none !important;
+		/* Oculta el logo en móviles */
+	}
+
+	.navbar-collapse {
+		justify-content: flex-end;
+		/* Empuja los enlaces a la derecha */
+	}
+
+	.navbar-collapse {
+		background: rgba(0, 0, 0, 0.9);
+		margin-top: 20vh;
+		padding: 10px;
+	}
+
+	/* Cuando el menú se abre, aplicamos el fondo difuminado */
+	.navbar-collapse.show {
+		background: rgba(0, 0, 0, 0.5);
+		/* Fondo semitransparente */
+		backdrop-filter: blur(10px);
+		/* Efecto de desenfoque */
+		-webkit-backdrop-filter: blur(10px);
+		/* Compatibilidad con Safari */
+		border-radius: 10px;
+		/* Opcional: bordes redondeados */
+		padding: 10px;
+	}
 }
 
 
+
+.calendar-container {
+	display: flex;
+	justify-content: center;
+	/* Centrar horizontalmente */
+	align-items: center;
+	/* Centrar verticalmente */
+	height: 90vh;
+	/* Reduce la altura para que suba un poco */
+	margin-top: -5vh;
+	/* Ajusta el valor para subirlo más o menos */
+}

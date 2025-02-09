@@ -1,273 +1,275 @@
 @import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-	.logoimg {
-	  display: none;
-	}
-  
-	.logoimgsm {
-	  position: absolute;
-	  left: -140px;
-	  bottom: -37px;
-	}
-  
-	.nav-item {
-	  padding-top: 2em;
-	}
-  
-	.navbar-toggler {
-	  float: right;
-	}
-  
-	.navbar-brand-two {
-	  display: none;
-	}
+
+/* NAVBAR TRANSPARENTE */
+.navbar {
+  position: fixed !important;
+  width: 100%;
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  z-index: 1000;
+  transition: background 0.3s ease-in-out;
+}
+
+/* LOGO DEL NAVBAR */
+.navbar-brand img {
+  width: 120px;
+  height: auto;
+}
+
+/* MENÚ HAMBURGUESA */
+.navbar-toggler {
+  border: none;
+  position: absolute;
+  right: 10px;
+  /* Asegura que se mantenga alineado a la derecha */
+  top: 10px;
+  /* Ajusta la altura del toggler */
+  transform: translateY(-5px);
+  /* Lo sube un poco */
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+}
+
+/* ESTILO DE LOS ENLACES */
+.nav-link {
+  color: white !important;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* ANIMACIÓN DE SUBRAYADO */
+.nav-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+/* EFECTO PARA EL LINK ACTIVO */
+.nav-link.nav-active:after {
+  width: 100%;
+  left: 0;
+}
+
+/* Asegurar que el logo esté más a la derecha */
+.navbar-brand {
+  margin: 40px;
+  /* Ajusta según necesites */
+}
+
+.navbar-brand img {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Cuando se haga scroll, el logo se ocultará */
+.navbar.scrolled .navbar-brand img {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  /* Evita que el logo ocupe espacio invisible */
+}
+
+/* Transición suave en los enlaces */
+.navbar-nav .nav-link {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Cuando el usuario hace scroll, los enlaces suben un poco */
+.navbar.scrolled .navbar-nav .nav-link {
+  transform: translateY(-63px);
+  /* Mueve los enlaces hacia arriba */
+}
+
+/* Separar más los enlaces entre sí */
+.navbar-nav {
+  gap: 2rem;
+  /* Aumenta el espacio entre enlaces */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 992px) {
+  .navbar-nav {
+    gap: 1rem;
+    /* Un poco menos de separación en móviles */
+    text-align: center;
   }
-  
-  /* Small devices (landscape phones, entre 576px y 767.98px) */
-  @media (min-width: 576px) and (max-width: 767.98px) {
-	.logoimg {
-	  display: none;
-	}
-  
-	.logoimgsm {
-	  position: absolute;
-	  left: -240px;
-	  bottom: -37px;
-	}
-  
-	.nav-item {
-	  padding-top: 2em;
-	}
-  
-	.navbar-toggler {
-	  float: right;
-	}
-  
-	.navbar-brand-two {
-	  display: none;
-	}
+
+  .navbar-brand {
+    display: none !important;
+    /* Oculta el logo en móviles */
   }
-  
-  /* Medium devices (tablets, entre 768px y 991.98px) */
-  @media (min-width: 768px) and (max-width: 991.98px) {
-	.logoimg {
-	  display: none;
-	}
-  
-	.logoimgsm {
-	  position: absolute;
-	  left: -340px;
-	  bottom: -37px;
-	}
-  
-	.nav-item {
-	  padding-top: 2em;
-	}
-  
-	.navbar-toggler {
-	  float: right;
-	}
-  
-	.navbar-brand-two {
-	  display: none;
-	}
+
+  .navbar-collapse {
+    justify-content: flex-end;
+    /* Empuja los enlaces a la derecha */
   }
-  
-  /*----CSS del NavBar------------------------------------------------------------------------------------------------------*/
-  
-  ul {
-	list-style-type: none;
-	display: flex;
-	gap: 1em;
-	margin: 0 !important;
-	padding: 0 !important;
+
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.9);
+    margin-top: 20vh;
+    padding: 10px;
   }
-  
-  .nav-link {
-	color: white !important;
+
+  /* Cuando el menú se abre, aplicamos el fondo difuminado */
+  .navbar-collapse.show {
+    background: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente */
+    backdrop-filter: blur(10px);
+    /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px);
+    /* Compatibilidad con Safari */
+    border-radius: 10px;
+    /* Opcional: bordes redondeados */
+    padding: 10px;
   }
-  
-  .logoimg,
-  .logoimgsm {
-	width: 5em !important;
-  }
-  
-  .container-fluid {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 3em !important;
-	background-color: rgb(49, 52, 66);
-	margin: 0 !important;
-  }
-  
-  .navbar {
-	padding: 0 !important;
-  }
-  
-  .nav-link {
-	cursor: pointer;
-	color: #fff;
-	text-decoration: none;
-	letter-spacing: 0.15em;
-	display: inline-block;
-	padding: 15px 20px;
-	position: relative;
-  }
-  
-  .nav-link:after {
-	background: none repeat scroll 0 0 transparent;
-	bottom: -2px;
-	content: "";
-	display: block;
-	height: 2px;
-	left: 50%;
-	position: absolute;
-	background: #fff;
-	transition: width 0.3s ease 0s, left 0.3s ease 0s;
-	width: 0;
-  }
-  
-  .nav-link:hover:after {
-	width: 100%;
-	left: 0;
-  }
-  
-  .nav-link.nav-active:after {
-	width: 100%;
-	left: 0;
-  }
-  
-  body {
-	background-color: rgb(49, 52, 66) !important;
-  }
+}
+
+
 
 /*----CSS de la galería------------------------------------------------------------------------------------------------------*/
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(167, 166, 167) !important;
 }
 
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: rgb(75, 75, 86);
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px;
+  position: relative;
+  top: 35vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: rgb(75, 75, 86);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .gallery-item {
-    flex-basis: 32.7%;
-    margin-bottom: 6px;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    transition: opacity 0.3s ease-in-out;
+  flex-basis: 32.7%;
+  margin-bottom: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .gallery-item:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .gallery-content {
-    font-size: .8em;
+  font-size: .8em;
 }
 
 .lightbox {
-    position: fixed;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    top: 0;
-    left: 0;
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  top: 0;
+  left: 0;
 }
 
 .lightbox-content {
-    position: relative;
-    width: 70%;
-    height: 70%;
-    margin: 5% auto;
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: 5% auto;
 }
 
 .lightbox-content img {
-    border-radius: 7px;
-    box-shadow: 0 0 3px 0 rgba(225, 225, 225, .25);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  border-radius: 7px;
+  box-shadow: 0 0 3px 0 rgba(225, 225, 225, .25);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .lightbox-prev,
 .lightbox-next {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 7px;
-    top: 45%;
-    cursor: pointer;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 7px;
+  top: 45%;
+  cursor: pointer;
 }
 
 .lightbox-prev {
-    left: 0;
+  left: 0;
 }
 
 .lightbox-next {
-    right: 0;
+  right: 0;
 }
 
 .lightbox-prev:hover,
 .lightbox-next:hover {
-    opacity: .8;
+  opacity: .8;
 }
 
 .gallery-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
 }
 
 @media (max-width: 767px) {
-    .gallery-container {
-        width: 100%;
-    }
+  .gallery-container {
+    width: 100%;
+  }
 
-    .gallery-item {
-        flex-basis: 49.80%;
-        margin-bottom: 3px;
-    }
+  .gallery-item {
+    flex-basis: 49.80%;
+    margin-bottom: 3px;
+  }
 
-    .lightbox-content {
-        width: 80%;
-        height: 60%;
-        margin: 15% auto;
-    }
+  .lightbox-content {
+    width: 80%;
+    height: 60%;
+    margin: 15% auto;
+  }
 }
 
 @media (max-width: 480px) {
-    .gallery-item {
-        flex-basis: 100%;
-        margin-bottom: 1px;
-    }
+  .gallery-item {
+    flex-basis: 100%;
+    margin-bottom: 1px;
+  }
 
-    .lightbox-content {
-        width: 90%;
-        margin: 20% auto;
-    }
+  .lightbox-content {
+    width: 90%;
+    margin: 20% auto;
+  }
 }
