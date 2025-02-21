@@ -21,7 +21,7 @@ jQuery(function ($) {
         // initialize playlist and controls
         var index = 0,
             playing = false,
-            basePath = '../Media/Gallery/Audios/', // Ruta base de los audios
+            basePath = '/Media/Gallery/Audios/', // Ruta base de los audios
             extension = '.ogg',
             categories = {
                 "El Audio": [
