@@ -27,7 +27,7 @@ jQuery(function ($) {
                 "El Audio": [
                     { "track": 1, "name": "El Audio", "file": "imagen1" }
                 ],
-                "Buenos días": [
+                "Buenos Días": [
                     { "track": 1, "name": "uyuy se despierta y escupe como no", "file": "imagen1" },
                     { "track": 2, "name": "besitoos hola holaa", "file": "imagen2" },
                     { "track": 3, "name": "holahola tiene sueñito", "file": "imagen3" },
