@@ -22,7 +22,7 @@ document.body.appendChild(lightBoxContainer);
 let currentIndex = 0;
 let currentGalleryItems = [];
 
-// Función para mostrar el lightbox con la imagen correcta
+// Función para mostrar el lightbox en la posición actual del usuario
 function showLightBox(n) {
     if (n >= currentGalleryItems.length) {
         currentIndex = 0;
@@ -34,6 +34,15 @@ function showLightBox(n) {
 
     let imageLocation = currentGalleryItems[currentIndex].querySelector("img, video").getAttribute("src");
     lightBoxImg.setAttribute("src", imageLocation);
+
+    // Obtener la posición actual del usuario en la pantalla
+    let scrollY = window.scrollY;
+
+    // Posicionar el lightbox en la misma altura del scroll del usuario
+    lightBoxContainer.style.display = "block";
+    lightBoxContainer.style.top = `${scrollY}px`; 
+    lightBoxContainer.style.position = "absolute"; 
+
     document.body.style.overflow = 'hidden';
 }
 
@@ -46,7 +55,6 @@ function currentImage(event) {
     currentIndex = currentGalleryItems.indexOf(clickedItem);
 
     showLightBox(currentIndex);
-    lightBoxContainer.style.display = "block";
 }
 
 // Agregar event listeners a cada imagen de cada galería

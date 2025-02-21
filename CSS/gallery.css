@@ -114,13 +114,30 @@
 }
 
 /* Ajustes del segundo navbar */
+/* En tu archivo CSS o en un <style> */
+.hide-second-navbar {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navbar-section .navbar {
+  position: fixed;           /* Ajusta según la altura del primer navbar */
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+}
+
 .navbar-section {
-  padding-top: 30vh;
+  padding-top: 25vh;
+  padding-bottom: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  border-radius: 10px; /* Bordes redondeados */
+  margin-bottom: 20px;
+  /* Espacio entre navbar y contenido */
+  border-radius: 10px;
+  /* Bordes redondeados */
 }
 
 /* Estilo del contenedor de los enlaces */
@@ -138,16 +155,16 @@
 /* Ajuste del navbar secundario en móviles */
 @media (max-width: 768px) {
   .navbar-section .navbar-collapse {
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
   }
 
   .navbar-section .navbar-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background: none !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background: none !important;
   }
 }
 
@@ -223,28 +240,30 @@ h2 {
 }
 
 .lightbox {
-  position: fixed;
+  position: absolute;
   display: none;
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100%;
-  overflow: auto;
   top: 0;
   left: 0;
+  z-index: 9999; /* Asegura que el modal esté por encima de la galería */
 }
 
 .lightbox-content {
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 60vh;
-  margin: 5% auto;
+  z-index: 10000; /* Para garantizar que la imagen aparezca por encima */
 }
 
-.lightbox-content img {
-  border-radius: 7px;
-  box-shadow: 0 0 3px 0 rgba(225, 225, 225, .25);
+.lightbox img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(225, 225, 225, 0.5);
 }
 
 .lightbox-prev,
@@ -253,22 +272,25 @@ h2 {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 7px;
-  top: 45%;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
+  z-index: 10001; /* Asegura que los botones estén sobre la imagen */
 }
 
 .lightbox-prev {
-  left: 0;
+  left: -40px;
 }
 
 .lightbox-next {
-  right: 0;
+  right: -40px;
 }
 
 .lightbox-prev:hover,
 .lightbox-next:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
+
 
 .gallery-item video {
   width: 100%;
