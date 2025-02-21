@@ -13,8 +13,11 @@
 
 /* LOGO DEL NAVBAR */
 .navbar-brand img {
+  margin-top: 4vh;
+  margin-left: 15vh;
   width: 120px;
   height: auto;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 /* MENÚ HAMBURGUESA */
@@ -22,20 +25,18 @@
   border: none;
   position: absolute;
   right: 10px;
-  /* Asegura que se mantenga alineado a la derecha */
   top: 10px;
-  /* Ajusta la altura del toggler */
   transform: translateY(-5px);
-  /* Lo sube un poco */
 }
 
 .navbar-toggler-icon {
-  background-color: white;
+  background-color: rgb(204, 214, 208) !important;
+  border-radius: 16%;
 }
 
 /* ESTILO DE LOS ENLACES */
 .nav-link {
-  color: white !important;
+  color: black !important;
   font-weight: bold;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   position: relative;
@@ -50,7 +51,7 @@
   height: 2px;
   bottom: -2px;
   left: 50%;
-  background: white;
+  background: black;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -65,101 +66,133 @@
   left: 0;
 }
 
-/* Asegurar que el logo esté más a la derecha */
-.navbar-brand {
-  margin: 40px;
-  /* Ajusta según necesites */
-}
-
-.navbar-brand img {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-/* Cuando se haga scroll, el logo se ocultará */
+/* AJUSTE DEL LOGO EN EL SCROLL */
 .navbar.scrolled .navbar-brand img {
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
-  /* Evita que el logo ocupe espacio invisible */
 }
 
-/* Transición suave en los enlaces */
 .navbar-nav .nav-link {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Cuando el usuario hace scroll, los enlaces suben un poco */
 .navbar.scrolled .navbar-nav .nav-link {
   transform: translateY(-63px);
-  /* Mueve los enlaces hacia arriba */
 }
 
-/* Separar más los enlaces entre sí */
+/* Espaciado entre enlaces */
 .navbar-nav {
   gap: 2rem;
-  /* Aumenta el espacio entre enlaces */
 }
 
-/* Ajuste para móviles */
+/* Ajustes móviles */
 @media (max-width: 992px) {
   .navbar-nav {
     gap: 1rem;
-    /* Un poco menos de separación en móviles */
     text-align: center;
   }
 
   .navbar-brand {
     display: none !important;
-    /* Oculta el logo en móviles */
   }
 
   .navbar-collapse {
     justify-content: flex-end;
-    /* Empuja los enlaces a la derecha */
-  }
-
-  .navbar-collapse {
     background: rgba(0, 0, 0, 0.9);
     margin-top: 20vh;
     padding: 10px;
   }
 
-  /* Cuando el menú se abre, aplicamos el fondo difuminado */
   .navbar-collapse.show {
     background: rgba(0, 0, 0, 0.5);
-    /* Fondo semitransparente */
     backdrop-filter: blur(10px);
-    /* Efecto de desenfoque */
     -webkit-backdrop-filter: blur(10px);
-    /* Compatibilidad con Safari */
     border-radius: 10px;
-    /* Opcional: bordes redondeados */
     padding: 10px;
   }
 }
 
+/* Ajustes del segundo navbar */
+.navbar-section {
+  padding-top: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo del contenedor de los enlaces */
+.navbar-section .navbar-collapse {
+  display: flex !important;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Ocultar botón hamburguesa solo en este navbar */
+.navbar-section .navbar-toggler {
+  display: none !important;
+}
+
+/* Ajuste del navbar secundario en móviles */
+@media (max-width: 768px) {
+  .navbar-section .navbar-collapse {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-section .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: none !important;
+  }
+}
+
+/* Ajustes para evitar la superposición con la galería */
+.section-total {
+  padding-top: 20vh !important;
+  position: relative;
+  z-index: 1;
+}
 
 
 /*----CSS de la galería------------------------------------------------------------------------------------------------------*/
 * {
   box-sizing: border-box;
 }
-body{
-  background-color: rgb(167, 166, 167) !important;
+body {
+  background-image: url("../Media/Gallery/flowersWallpaper.webp"); /* Cambia la ruta por la de tu imagen */
+  background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Fija la imagen en su lugar */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
+.section-total{
+  padding-top: 30vh !important;
+}
 .gallery-container {
-  position: relative;
-  top: 35vh;
+  margin-top: 4vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: rgb(75, 75, 86);
+  background-color: rgb(204, 214, 208);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
   width: 80%;
   margin: 0 auto;
   padding: 10px;
+  margin-bottom: 20vh !important;
 }
+h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Espacio entre el título y la galería */
+  font-size: 2rem;
+  color: white;
+}
+
 
 .gallery-item {
   flex-basis: 32.7%;
@@ -202,8 +235,7 @@ body{
 
 .lightbox-content {
   position: relative;
-  width: 70%;
-  height: 70%;
+  max-width: 60vh;
   margin: 5% auto;
 }
 
@@ -247,7 +279,7 @@ body{
 
 @media (max-width: 767px) {
   .gallery-container {
-    width: 100%;
+    width: 100%; 
   }
 
   .gallery-item {
@@ -256,8 +288,6 @@ body{
   }
 
   .lightbox-content {
-    width: 80%;
-    height: 60%;
     margin: 15% auto;
   }
 }
@@ -269,7 +299,6 @@ body{
   }
 
   .lightbox-content {
-    width: 90%;
     margin: 20% auto;
   }
 }

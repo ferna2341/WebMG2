@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
 
+body {
+	background-image: url("../Media/Gallery/flowersWallpaper.webp"); /* Cambia la ruta por la de tu imagen */
+	background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+	background-position: center; /* Centra la imagen */
+	background-attachment: fixed; /* Fija la imagen en su lugar */
+	background-repeat: no-repeat; /* Evita que la imagen se repita */
+  }
 /* NAVBAR TRANSPARENTE */
 .navbar {
 	position: fixed !important;
@@ -11,11 +18,11 @@
 	transition: background 0.3s ease-in-out;
 }
 
-/* LOGO DEL NAVBAR */
 .navbar-brand img {
 	width: 120px;
 	height: auto;
-}
+	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
 
 /* MENÚ HAMBURGUESA */
 .navbar-toggler {
@@ -30,12 +37,12 @@
 }
 
 .navbar-toggler-icon {
-	background-color: white;
+	background-color: black;
 }
 
 /* ESTILO DE LOS ENLACES */
 .nav-link {
-	color: white !important;
+	color: black !important;
 	font-weight: bold;
 	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 	position: relative;
@@ -50,7 +57,7 @@
 	height: 2px;
 	bottom: -2px;
 	left: 50%;
-	background: white;
+	background: black;
 	transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -138,16 +145,55 @@
 	}
 }
 
-
-
-.calendar-container {
+.calendar-map-container {
 	display: flex;
 	justify-content: center;
-	/* Centrar horizontalmente */
 	align-items: center;
-	/* Centrar verticalmente */
-	height: 90vh;
-	/* Reduce la altura para que suba un poco */
-	margin-top: -5vh;
-	/* Ajusta el valor para subirlo más o menos */
+	gap: 20px;
+	padding-top: 30vh;
+	margin-left: 10vh;
+	margin-right: 10vh;
+}
+
+.calendar-container, .map-container {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.spotify-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;	
+	margin-top: 20px;
+	margin-bottom: 20vh;
+}
+
+.spotify-iframe, .extra-iframe {
+	width: 45%;
+	height: 500px;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 992px) {
+	.calendar-map-container {
+		flex-direction: column;
+	}
+
+	.calendar-container, .map-container {
+		width: 100%;
+	}
+
+	.spotify-container {
+		flex-direction: column;
+		align-items: center;
+		margin-left: 3vh;
+		margin-right: 3vh;
+	}
+
+	.spotify-iframe, .extra-iframe {
+		width: 100%;
+	}
 }

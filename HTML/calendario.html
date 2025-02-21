@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosotros &#x2764;</title>
   <link href="../CSS/calendario.css" rel="stylesheet">
+  <link href="../CSS/todo.css" rel="stylesheet">
   <link rel="shortcut icon" href="/Media/torreEiffel.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,18 +31,37 @@
         <ul class="navbar-nav ms-auto flex-nowrap">
           <li class="nav-item"><a href="../HTML/main.html" class="nav-link menu-item">Home</a></li>
           <li class="nav-item"><a href="../HTML/gallery.html" class="nav-link menu-item">Gallery</a></li>
-          <li class="nav-item"><a href="#" class="nav-link menu-item nav-active">Calendario</a></li>
+          <li class="nav-item"><a href="#" class="nav-link menu-item nav-active">Nuestro</a></li>
           <li class="nav-item"><a href="../HTML/flores.html" class="nav-link menu-item">Flores</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="calendar-container">
-    <iframe
-      src="https://calendar.google.com/calendar/embed?src=b56f83912e3471778f8119448727695f3e9306404e65bd0a6c79f80969cf3aff%40group.calendar.google.com&ctz=Europe%2FZurich"
-      style="border: 0" width="1100" height="550" frameborder="0" scrolling="no">
-    </iframe>
+  <!-- Calendario y mapa-------------------------------------------------------------------------------------------------------->
+  <div class="calendar-map-container">
+    <div class="calendar-container">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=b56f83912e3471778f8119448727695f3e9306404e65bd0a6c79f80969cf3aff%40group.calendar.google.com&ctz=Europe%2FZurich"
+        style="border: 0" width="900" height="500" frameborder="0" scrolling="no">
+      </iframe>
+    </div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=12OdwFiO3V0ZsDlcbHkg8r8SNq7I3lNw&ehbc=2E312F&noprof=1"
+        width="640" height="480"></iframe>
+    </div>
   </div>
+  <div class="spotify-container">
+    <iframe class="spotify-iframe" style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/1mrI9A1IfLuVf8TTCMZzee?utm_source=generator&theme=0" width="100%"
+      height="352" frameBorder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe class="extra-iframe" style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/2ZS8Ud2ra36FgZHLbCN6Vq?utm_source=generator&theme=0" width="100%"
+      height="352" frameBorder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
+
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

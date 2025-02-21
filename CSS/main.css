@@ -11,11 +11,13 @@
 	transition: background 0.3s ease-in-out;
 }
 
-/* LOGO DEL NAVBAR */
 .navbar-brand img {
+	margin-top: 4vh;
+	margin-left: 4vh;
 	width: 120px;
 	height: auto;
-}
+	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
 
 /* MENÚ HAMBURGUESA */
 .navbar-toggler {

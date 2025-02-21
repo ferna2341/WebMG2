@@ -1,0 +1,448 @@
+/* Font Family
+================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+
+/* Global Styles
+================================================== */
+@import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
+
+/* NAVBAR TRANSPARENTE */
+.navbar {
+    position: fixed !important;
+    width: 100%;
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+/* LOGO DEL NAVBAR */
+.navbar-brand img {
+    margin-top: 4vh;
+    margin-left: 15vh;
+    width: 120px;
+    height: auto;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* MENÚ HAMBURGUESA */
+.navbar-toggler {
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transform: translateY(-5px);
+}
+
+.navbar-toggler-icon {
+    background-color: rgb(204, 214, 208) !important;
+    border-radius: 16%;
+}
+
+/* ESTILO DE LOS ENLACES */
+.nav-link {
+    color: black !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* ANIMACIÓN DE SUBRAYADO */
+.nav-link:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background: black;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+/* EFECTO PARA EL LINK ACTIVO */
+.nav-link.nav-active:after {
+    width: 100%;
+    left: 0;
+}
+
+/* AJUSTE DEL LOGO EN EL SCROLL */
+.navbar.scrolled .navbar-brand img {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+.navbar-nav .nav-link {
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar.scrolled .navbar-nav .nav-link {
+    transform: translateY(-63px);
+}
+
+/* Espaciado entre enlaces */
+.navbar-nav {
+    gap: 2rem;
+}
+
+/* Ajustes móviles */
+@media (max-width: 992px) {
+    .navbar-nav {
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .navbar-brand {
+        display: none !important;
+    }
+
+    .navbar-collapse {
+        justify-content: flex-end;
+        background: rgba(0, 0, 0, 0.9);
+        margin-top: 20vh;
+        padding: 10px;
+    }
+
+    .navbar-collapse.show {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 10px;
+    }
+}
+
+/* Ajustes del segundo navbar */
+/* En tu archivo CSS o en un <style> */
+.hide-second-navbar {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  
+  .navbar-section .navbar {
+    position: fixed;           /* Ajusta según la altura del primer navbar */
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+  }
+  
+.navbar-section {
+    padding-top: 25vh;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    /* Espacio entre navbar y contenido */
+    border-radius: 10px;
+    /* Bordes redondeados */
+}
+
+/* Estilo del contenedor de los enlaces */
+.navbar-section .navbar-collapse {
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Ocultar botón hamburguesa solo en este navbar */
+.navbar-section .navbar-toggler {
+    display: none !important;
+}
+
+/* Ajuste del navbar secundario en móviles */
+@media (max-width: 768px) {
+    .navbar-section .navbar-collapse {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-section .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        background: none !important;
+    }
+}
+
+/* Ajustes para evitar la superposición con la galería */
+.section-total {
+    padding-top: 20vh !important;
+    position: relative;
+    z-index: 1;
+}
+
+html,
+body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    background-color: #0665a2;
+    color: #fff;
+    font-size: 1rem;
+    font-family: "Source Sans Pro", arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: .025rem;
+    line-height: 1.618;
+    padding: 1rem 0;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Setup
+================================================== */
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+}
+
+.column {
+    width: inherit;
+}
+
+
+/* Typography / Links
+================================================== */
+
+p {
+    color: #fff;
+    display: block;
+    font-size: .9rem;
+    font-weight: 400;
+    margin: 0 0 2px;
+}
+
+a,
+a:visited {
+    color: #8cc3e6;
+    outline: 0;
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    color: #bbdef5;
+}
+
+p a,
+p a:visited {
+    line-height: inherit;
+}
+
+
+/* Misc.
+================================================== */
+
+.add-bottom {
+    margin-bottom: 2rem !important;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.no-support {
+    margin: 2rem auto;
+    text-align: center;
+    width: 90%;
+}
+
+
+/* Audio Player Styles
+================================================== */
+
+audio {
+    display: none;
+}
+
+#audiowrap,
+#plwrap {
+    margin: 0 auto;
+}
+
+#tracks {
+    font-size: 0;
+    position: relative;
+    text-align: center;
+}
+
+#nowPlay {
+    display: block;
+    font-size: 0;
+}
+
+#nowPlay span {
+    display: inline-block;
+    font-size: 1.05rem;
+    vertical-align: top;
+}
+
+#nowPlay span#npAction {
+    padding: 21px;
+    width: 30%;
+}
+
+#nowPlay span#npTitle {
+    padding: 21px;
+    text-align: right;
+    width: 70%;
+}
+
+#plList li {
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: 21px 0;
+}
+
+#plList li:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.plItem {
+    position: relative;
+}
+
+.plTitle {
+    left: 50px;
+    overflow: hidden;
+    position: absolute;
+    right: 65px;
+    text-overflow: ellipsis;
+    top: 0;
+    white-space: nowrap;
+}
+
+.plNum {
+    padding-left: 21px;
+    width: 25px;
+}
+
+.plLength {
+    padding-left: 21px;
+    position: absolute;
+    right: 21px;
+    top: 0;
+}
+
+.plSel,
+.plSel:hover {
+    background-color: rgba(0, 0, 0, .1);
+    color: #fff;
+    cursor: default !important;
+}
+
+#tracks a {
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2.3rem;
+    height: 40px;
+    line-height: .2;
+    margin: 0 5px 30px;
+    padding: 12px;
+    text-decoration: none;
+    transition: background .3s ease;
+}
+
+#tracks a:hover,
+#tracks a:active {
+    background-color: rgba(0, 0, 0, .1);
+    color: #fff;
+}
+
+#tracks a::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+
+/* Plyr Overrides
+================================================== */
+
+.plyr--audio .plyr__controls {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-family: "Source Sans Pro", arial, sans-serif;
+    padding: 20px 20px 20px 13px;
+    width: 100%;
+}
+
+a.plyr__controls__item.plyr__control:hover,
+.plyr--audio .plyr__controls button:hover,
+.plyr--audio .plyr__controls button.tab-focus:focus,
+.plyr__play-large {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.plyr__progress--played,
+.plyr__volume--display {
+    color: rgba(0, 0, 0, .1);
+}
+
+.plyr--audio .plyr__progress--buffer,
+.plyr--audio .plyr__volume--display {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.plyr--audio .plyr__progress--buffer {
+    color: rgba(0, 0, 0, .1);
+}
+
+.plyr__controls .plyr__controls__item.plyr__time {
+    font-size: 14px;
+    margin-left: 7px;
+}
+
+
+/* Media Queries
+================================================== */
+
+@media only screen and (max-width:600px) {
+    #nowPlay span#npAction {
+        display: none;
+    }
+
+    #nowPlay span#npTitle {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
