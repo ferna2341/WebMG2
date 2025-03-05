@@ -81,7 +81,7 @@ jQuery(function ($) {
                     { "track": 12, "name": "no se que es esto", "file": "imagen12" },
                     { "track": 13, "name": "se contiene?", "file": "imagen13" }
                 ],
-                "Otras Cosas": [
+                "Cosas": [
                     { "track": 1, "name": "pum latigazo", "file": "imagen1" },
                     { "track": 2, "name": "bro aprende ya de verdad", "file": "imagen2" },
                     { "track": 3, "name": "esta super enfadada la bro", "file": "imagen3" },
